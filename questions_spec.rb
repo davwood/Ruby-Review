@@ -9,7 +9,7 @@ end
 describe 'the Friday test :)' do
   
   specify 'select_elements_starting_with_a' do
-    n = select_elements_starting_with_a ['bananas', 'apples', 'pears', 'avocados']
+    n = select_elements_starting_with_a(['bananas', 'apples', 'pears', 'avocados'])
     expect(n).to eq ['apples', 'avocados']
   end
 
@@ -108,7 +108,7 @@ describe 'the Friday test :)' do
 
   specify 'average_of_array' do
     n = average_of_array [10, 15, 25]
-    expect(n).to eq 33
+    expect(n).to eq 17
   end
 
   specify 'get_elements_until_greater_than_five' do
@@ -147,7 +147,7 @@ describe 'the Friday test :)' do
   end
 
   specify 'round_down_number' do
-    n = round_up_number 4.9
+    n = round_down_number 4.9
     expect(n).to eq 4
   end
 
@@ -190,8 +190,8 @@ describe 'the Friday test :)' do
   specify 'square_root_of' do
     a = square_root_of 9
     b = square_root_of 3
-    expect(a).to eq 9.0
-    expect(a).to eq 1.7320508075688772
+    expect(a).to eq 3.0
+    expect(b).to eq 1.7320508075688772
   end
 
   specify 'word_count_a_file' do
