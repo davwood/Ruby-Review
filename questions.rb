@@ -312,8 +312,47 @@ end
 # implement fizzbuzz without modulo, i.e. the % method
 # go from 1 to 100
 # (there's no RSpec test for this one)
-def fizzbuzz_without_modulo(limit)
+def fizzbuzz_without_modulo
+	a = 15
+	multiples_of_15 = []
+	while a < 101
+		multiples_of_15.push(a)
+		a += 15
+	end
 
+	b = 3
+	multiples_of_3 = []
+	while b < 101
+		multiples_of_3.push(b)
+		b += 3
+	end
+
+	c = 5
+	multiples_of_5 = []
+	while c < 101
+		multiples_of_5.push(c)
+		c += 5
+	end
+
+	i = 0
+	fizzling_array = []
+	while i <= 100
+		if 
+			!(multiples_of_15.select {|x| x == i}).empty?
+			fizzling_array.push('Fizzbuzz')
+		elsif 
+			!(multiples_of_3.select {|x| x == i}).empty?
+			fizzling_array.push('Fizz')
+		elsif 
+			!(multiples_of_5.select {|x| x == i}).empty?
+			fizzling_array.push('Buzz')
+		else
+			fizzling_array.push(i)
+		end
+
+	i = i + 1
+	end
+	puts fizzling_array.inspect
 end
 
 # print the lyrics of the song 99 bottles of beer on the wall
@@ -323,4 +362,16 @@ end
 # at the end.
 # (there's no RSpec test for this one)
 def ninety_nine_bottles_of_beer
+	99.downto(0) do |number|
+		if number == 1
+			puts "1 bottle of beer on the wall, 1 bottle of beer."
+			puts "Take one down and pass it around, no more bottles of beer on the wall."
+		elsif number == 0
+			puts "No more bottles of beer on the wall, no more bottles of beer."
+			puts "Go to the store and buy some more, 99 bottles of beer on the wall."
+		else
+			puts "#{number} bottles of beer on the wall, #{number} bottles of beer"
+			puts "Take one down and pass it around, #{number-1} bottles of beer on the wall."
+		end
+	end
 end
